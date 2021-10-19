@@ -2,16 +2,15 @@ package org.hbrs.se1.ws21.uebung2;
 
 import org.hbrs.se1.ws21.uebung2.Exception.ContainerException;
 
-public class Container <T extends Member> {
+public class Container {
 
     Member[] container;
-    int size;
-    int capacity;
+    int size= 0;
+    int capacity = 1;
 
     //Konstruktor erzeugt ein Objekt Container in denen Member angelegt werden können
     public Container() {
-        size  = 0;
-        container = (Member[]) new Object[capacity];
+        container = new Member[capacity];
     }
 
     public int size() { return size; }
@@ -19,12 +18,14 @@ public class Container <T extends Member> {
     public void addMember(Member m1) throws ContainerException {
         int i = 0;
         try {
-            if(isIDinContainer(m1) == true) {
-                throw new ContainerException(m1.getID());
+            if(size != 0) {
+                if (isIDinContainer(m1) == true) {
+                    throw new ContainerException(m1.getID());
+                }
             }
             if(size == capacity) {
                 capacity*=2;
-                Member[] container2 = (T[]) new Object[capacity];
+                Member[] container2 = new Member[capacity];
                 size= 0;
                 for(Member j:container) {
                     container2[size++] =j;
@@ -41,12 +42,10 @@ public class Container <T extends Member> {
 
     //prüft ob ID schon vorhanden ist
     public boolean isIDinContainer(Member m1) {
-        int i = 0;
-            while (container[i] != null) {
-                if (container[i].getID() == m1.getID()) {
+            for(int z = 0; z<size; z++){
+                if (container[z].getID() == m1.getID()) {
                     return true;
                 }
-                i++;
             } return false;
     }
 
@@ -58,14 +57,18 @@ public class Container <T extends Member> {
     public String deleteMember(Member m1) throws ContainerException {
         int i = 0;
         try {
-            if (isIDinContainer(m1) == true) {
+            if (isIDinContainer(m1) == false) {
                 throw new ContainerException(m1.getID());
             }
-            while (container[i] != null) {
-                i++;
+           while(container[i]!= m1) {
+               i++;
+           } while(container[i] != null) {
+               container[i] = container[i+1];
+               i++;
             }
         } finally {
-            return "Member "+m1.getID() +"gelöscht";
+            container[size-1] = null;
+            return "Member ID: "+m1.getID() +" gelöscht";
         }
     }
 
@@ -78,5 +81,14 @@ public class Container <T extends Member> {
             System.out.println(container[i]);
             i++;
         }
+    }
+
+    public String toString() {
+        String s = "";
+        int i = 0;
+        while(i < size) {
+            s += "\n"+container[i];
+            i++;
+        } return s;
     }
 }

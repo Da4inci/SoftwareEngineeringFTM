@@ -5,11 +5,11 @@ public class ContainerException extends Exception{
     int id;
 
     public ContainerException(int id) {
-        super("Das Member-Objekt mit der ID" +id +"ist be- reits vorhanden!");
+        super("Das Member-Objekt mit der ID " +id +" ist bereits vorhanden!");
     }
 
-    //public ContainerException(String fehlermeldung) {
-    //    super(fehlermeldung);
-    //}
+    public ContainerException(String fehlermeldung) {
+        super(fehlermeldung);
+    }
 
 }

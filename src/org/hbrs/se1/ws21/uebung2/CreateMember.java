@@ -10,7 +10,7 @@ public class CreateMember implements Member{
 
     @Override
     public Integer getID() {
-        return null;
+        return id;
     }
 
     public String toString() {
