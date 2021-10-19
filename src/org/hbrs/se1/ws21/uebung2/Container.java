@@ -2,31 +2,37 @@ package org.hbrs.se1.ws21.uebung2;
 
 import org.hbrs.se1.ws21.uebung2.Exception.ContainerException;
 
-public class Container implements Member{
+public class Container <T extends Member> {
 
-    Container[] c1 = new Container[];
+    Member[] container;
+    int size;
+    int capacity;
 
     //Konstruktor erzeugt ein Objekt Container in denen Member angelegt werden können
     public Container() {
-        //Erstellt ein Array vom Typ Member
-        Member[] container;
+        size  = 0;
+        container = (Member[]) new Object[capacity];
     }
 
-    public int size() {
-        while(c1 != null) {
-
-        }
-    }
+    public int size() { return size; }
 
     public void addMember(Member m1) throws ContainerException {
         int i = 0;
         try {
-            if(c1.isIDinContainer(m1) == true) {
-                throw new ContainerException();
+            if(isIDinContainer(m1) == true) {
+                throw new ContainerException(m1.getID());
             }
-            while (container[i] != null) {
-                i++;
-            }
+            if(size == capacity) {
+                capacity*=2;
+                Member[] container2 = (T[]) new Object[capacity];
+                size= 0;
+                for(Member j:container) {
+                    container2[size++] =j;
+                    container = container2;
+                }
+            } container[size] = m1;
+            size++;
+            //return container[size-1];
         }
         catch(ContainerException e) {
             System.out.print(e.toString());
@@ -52,12 +58,14 @@ public class Container implements Member{
     public String deleteMember(Member m1) throws ContainerException {
         int i = 0;
         try {
-            if(c1.isIDinContainer(m1) == true) {
-                throw new ContainerException();
+            if (isIDinContainer(m1) == true) {
+                throw new ContainerException(m1.getID());
             }
-            while (c1.container[i] != null) {
+            while (container[i] != null) {
                 i++;
             }
+        } finally {
+            return "Member "+m1.getID() +"gelöscht";
         }
     }
 
@@ -67,21 +75,8 @@ public class Container implements Member{
     public void dump() {
         int i = 0;
         while(container[i] != null) {
-            container[i].getID().toString();
+            System.out.println(container[i]);
+            i++;
         }
-    }
-
-    public String toString() {
-        String s = "";
-        int i = 0;
-        while(container[i] != null) {
-            System.out.println("Member (ID = " +container[i].getID() +")");
-        }
-        return s;
-    }
-
-    @Override
-    public Integer getID() {
-        return null;
     }
 }
