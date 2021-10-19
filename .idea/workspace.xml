@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0055c86a-0674-4803-9cd4-7b5ea060f84d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung1/Test/ContainerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/CreateMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/CreateMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Exception/ContainerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Exception/ContainerException.java" afterDir="false" />
-    </list>
+    <list default="true" id="0055c86a-0674-4803-9cd4-7b5ea060f84d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +88,7 @@
       <workItem from="1634571792850" duration="9239000" />
       <workItem from="1634632106163" duration="529000" />
       <workItem from="1634632735643" duration="15000" />
-      <workItem from="1634632755949" duration="4008000" />
+      <workItem from="1634632755949" duration="4036000" />
     </task>
     <task id="LOCAL-00001" summary="Uebung1 Vollständig">
       <created>1634571680207</created>
@@ -127,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634630993820</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Uebung 2  Bearbeitet fast vollständig (Test in Bearneitung)">
+      <created>1634640432442</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1634640432442</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +134,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Uebung1 Vollständig" />
     <MESSAGE value="Uebung 2  Bearbeitet 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uebung 2  Bearbeitet 1" />
+    <MESSAGE value="Uebung 2  Bearbeitet fast vollständig (Test in Bearneitung)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uebung 2  Bearbeitet fast vollständig (Test in Bearneitung)" />
   </component>
 </project>
