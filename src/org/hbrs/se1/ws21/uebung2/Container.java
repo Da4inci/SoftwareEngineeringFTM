@@ -1,10 +1,78 @@
 package org.hbrs.se1.ws21.uebung2;
+import java.util.LinkedList;
+import java.util.Iterator;
 
 import org.hbrs.se1.ws21.uebung2.Exception.ContainerException;
 
+//Herr Alda ich muss sagen, dass ich die Letzte Aufagbenstellung bezüglich der Datenstruktur ANFORDERUNG
+// erst am Ende nach der Bearbeitung des eigentlichen Programms gelesen habe, demnach finden sie unter dem neuen
+// (jetzigen) Programm die eigentlichen Methoden(kommentiert) ...schade, aber dennoch war das eine gute Übung :)
+
 public class Container {
 
-    Member[] container;
+    private LinkedList<Member> list;
+
+    /**
+     * Konstruktor für das Container Objekt
+     */
+    public Container() {
+        list = new LinkedList<>();
+    }
+    public void addMember(Member member) throws ContainerException {
+        if(this.contains(member.getID())) {
+            String e = "Das Member-Objekt mit der ID " +member.getID() +" ist bereits vorhanden!";
+            throw new ContainerException(e);
+        }
+        list.add(member);
+    }
+
+    /**
+     * Überprüft ob ein Member schon vorhandne ist
+     * @param id
+     * @return
+     */
+    public boolean contains(int id) {
+        Iterator<Member> listIterator = list.iterator();
+        Member tempMember;
+        while (listIterator.hasNext()) {
+            tempMember = listIterator.next();
+            if(tempMember.getID() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public String deleteMember(int id) {
+        if(this.contains(id) == false) {
+            return "Löschen nicht möglich: Der Member mit der ID " +id +" existiert nicht.";
+        }
+        else {
+            Iterator<Member> listIterator = list.iterator();
+            Member tempMember;
+            while (listIterator.hasNext()) {
+                tempMember = listIterator.next();
+                if(tempMember.getID() == id) {
+                    list.remove(tempMember);
+                    break;
+                }
+            }
+            return "Erfolgreich gelöscht: Der Member mit der ID " +id +" wurde entfernt.";
+        }
+    }
+    public void dump() {
+        Iterator<Member> listIterator = list.iterator();
+        Member tempMember;
+        while (listIterator.hasNext()) {
+            tempMember = listIterator.next();
+            System.out.println(tempMember.toString());
+        }
+    }
+    public int size() {
+        return list.size();
+    }
+}
+
+/*    Member[] container;
     int size= 0;
     int capacity = 1;
 
@@ -53,7 +121,7 @@ public class Container {
      * Löscht den übergebenen Member aus dem Container
      * @param m1
      * @return
-     */
+     //
     public String deleteMember(Member m1) throws ContainerException {
         int i = 0;
         try {
@@ -74,7 +142,7 @@ public class Container {
 
     /**
      * Gibt die IDs der Members in dem gespeicherten Container aus
-     */
+
     public void dump() {
         int i = 0;
         while(container[i] != null) {
@@ -91,4 +159,5 @@ public class Container {
             i++;
         } return s;
     }
-}
+    */
+

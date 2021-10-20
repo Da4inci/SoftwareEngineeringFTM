@@ -13,7 +13,7 @@ public class Main {
         Member m4 = MemberFactory.newMember(4);
         Member m5 = MemberFactory.newMember(4);
 
-        Member[] memberarray = {m1,m2,m3,m4,m5};
+        Member[] memberarray = {m1,m2,m3,m4};
 
         Container c1 = new Container();
         for(Member j: memberarray) {
@@ -21,10 +21,10 @@ public class Main {
             System.out.println("Member " +j.getID() +" hinzugefügt");
         }
 
-        System.out.println(c1.toString());
+        c1.dump();
         System.out.println("size " +c1.size());
-        System.out.println(c1.deleteMember(m1));
-        System.out.println(c1.toString());
+        System.out.println(c1.deleteMember(1));
+        //System.out.println(c1.toString()); Funktioniert bei dem auskommentierten Teil: Container
         System.out.println("size " +c1.size());
         //System.out.println(m2.toString());
     }
