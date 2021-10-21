@@ -18,6 +18,7 @@ public class Container {
     public Container() {
         list = new LinkedList<>();
     }
+
     public void addMember(Member member) throws ContainerException {
         if(this.contains(member.getID())) {
             String e = "Das Member-Objekt mit der ID " +member.getID() +" ist bereits vorhanden!";
