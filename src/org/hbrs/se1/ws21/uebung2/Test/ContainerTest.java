@@ -33,6 +33,7 @@ class ContainerTest {
 
     @Test
     void test1() throws ContainerException {
+        assertEquals(0, container.size(),"falsch");
         container.addMember(m1);
         assertThrows(ContainerException.class, () -> {
             container.addMember(m1);
