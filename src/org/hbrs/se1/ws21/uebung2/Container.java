@@ -3,6 +3,7 @@ import java.util.LinkedList;
 import java.util.Iterator;
 
 import org.hbrs.se1.ws21.uebung2.Exception.ContainerException;
+import org.hbrs.se1.ws21.uebung3.persistence.PersistenceException;
 
 //Herr Alda ich muss sagen, dass ich die Letzte Aufagbenstellung bezüglich der Datenstruktur ANFORDERUNG
 // erst am Ende nach der Bearbeitung des eigentlichen Programms gelesen habe, demnach finden sie unter dem neuen
@@ -71,6 +72,23 @@ public class Container {
     public int size() {
         return list.size();
     }
+
+    /**
+     * speichert die Objekte member von container persistent auf einem Datenspeicher
+     * @throws PersistenceException
+     */
+    public void store() throws PersistenceException {
+
+    }
+
+    /**
+     *
+     */
+    public void load() throws PersistenceException {
+
+    }
+
+
 }
 
 /*    Member[] container;

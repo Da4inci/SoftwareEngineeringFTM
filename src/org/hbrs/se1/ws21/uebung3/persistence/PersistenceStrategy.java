@@ -1,5 +1,7 @@
 package org.hbrs.se1.ws21.uebung3.persistence;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -18,6 +20,6 @@ import java.util.List;
 public interface PersistenceStrategy<E> {
     public void openConnection() throws PersistenceException;
     public void closeConnection() throws PersistenceException;
-    public void save(List<E> member) throws PersistenceException;
-    public List<E> load() throws PersistenceException;
+    public void save(List<E> member) throws PersistenceException, ClassNotFoundException, IOException;
+    public List<E> load() throws PersistenceException, FileNotFoundException, IOException, ClassNotFoundException;
 }
