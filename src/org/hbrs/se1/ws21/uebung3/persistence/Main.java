@@ -11,6 +11,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
             Member m1 = MemberFactory.newMember(1);
             Member m2 = MemberFactory.newMember(2);
             Member m3 = MemberFactory.newMember(3);
@@ -31,17 +32,20 @@ public class Main {
                 System.out.println("Fehler");
 
             }
+    /*
 
-            /*
              Container c1 = Container.getInstance();
 
             try {
                 c1.load();
             }
-            catch (PersistenceException | ContainerException e){
+            catch (PersistenceException e){
                 System.out.println("Fehler");
-
             }
-             */
+            System.out.println(c1.list.toString());
+
+    */
     }
+
+
 }

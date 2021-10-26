@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0055c86a-0674-4803-9cd4-7b5ea060f84d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung3/persistence/Main.java" afterDir="false" />
+    <list default="true" id="0055c86a-0674-4803-9cd4-7b5ea060f84d" name="Changes" comment="SE1 Uebung3 DesignPattern(Singleton) + Stream fertig">
+      <change afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung3/persistence/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung3/persistence/MemberView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung3/persistence/Test2/PersistenceStrategyStreamTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/CreateMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/CreateMember.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Test/ContainerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung2/Test/ContainerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung3/persistence/PersistenceStrategyStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung3/persistence/PersistenceStrategyStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung3/persistence/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung3/persistence/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -63,10 +64,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.hbrs.se1.ws21.uebung3.persistence.Test" />
       <recent name="org.hbrs.se1.ws21.uebung1.Test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="JUnit.PersistenceStrategyStreamTest.save">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws21.uebung3.persistence.Main" />
       <module name="codesSE2021" />
@@ -93,9 +95,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PersistenceStrategyStreamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="codesSE2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hbrs.se1.ws21.uebung3.persistence.Test2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hbrs.se1.ws21.uebung3.persistence.Test2" />
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws21.uebung3.persistence.Test2.PersistenceStrategyStreamTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersistenceStrategyStreamTest.save" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="codesSE2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hbrs.se1.ws21.uebung3.persistence.Test2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.hbrs.se1.ws21.uebung3.persistence.Test2" />
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws21.uebung3.persistence.Test2.PersistenceStrategyStreamTest" />
+      <option name="METHOD_NAME" value="save" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PersistenceStrategyStreamTest.save" />
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="JUnit.PersistenceStrategyStreamTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -120,7 +155,10 @@
       <workItem from="1634829696663" duration="7677000" />
       <workItem from="1634935339692" duration="1798000" />
       <workItem from="1635153356089" duration="4856000" />
-      <workItem from="1635233001066" duration="2153000" />
+      <workItem from="1635233001066" duration="4005000" />
+      <workItem from="1635242024619" duration="1137000" />
+      <workItem from="1635243256788" duration="4603000" />
+      <workItem from="1635247906055" duration="1279000" />
     </task>
     <task id="LOCAL-00001" summary="Uebung1 Vollständig">
       <created>1634571680207</created>
@@ -192,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635153578364</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="SE1 Uebung3 DesignPattern(Singleton) + Stream fertig">
+      <created>1635235228190</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1635235228190</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +249,8 @@
     <MESSAGE value="Uebung 2  Bearbeitet fast vollständig (Test in Bearneitung)" />
     <MESSAGE value="SE1 Uebung2 vollstämdig bearbeitet" />
     <MESSAGE value="SE1 Uebung3 ...bearbeiten..." />
-    <option name="LAST_COMMIT_MESSAGE" value="SE1 Uebung3 ...bearbeiten..." />
+    <MESSAGE value="SE1 Uebung3 DesignPattern(Singleton) + Stream fertig" />
+    <option name="LAST_COMMIT_MESSAGE" value="SE1 Uebung3 DesignPattern(Singleton) + Stream fertig" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

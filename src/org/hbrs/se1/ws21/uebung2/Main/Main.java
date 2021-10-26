@@ -4,6 +4,7 @@ import org.hbrs.se1.ws21.uebung2.Container;
 import org.hbrs.se1.ws21.uebung2.Exception.ContainerException;
 import org.hbrs.se1.ws21.uebung2.Member;
 import org.hbrs.se1.ws21.uebung2.MemberFactory;
+import org.hbrs.se1.ws21.uebung3.persistence.MemberView;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,7 +22,7 @@ public class Main {
                 c1.addMember(j);
                 System.out.println("Member " + j.getID() + " hinzugefügt");
             }
-            c1.dump();
+            MemberView.dump(c1.getCurrentList());
             System.out.println("size " + c1.size());
             System.out.println(c1.deleteMember(1));
             //System.out.println(c1.toString()); Funktioniert bei dem auskommentierten Teil: Container

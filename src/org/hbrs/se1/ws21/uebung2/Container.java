@@ -1,6 +1,7 @@
 package org.hbrs.se1.ws21.uebung2;
 import java.util.LinkedList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.hbrs.se1.ws21.uebung2.Exception.ContainerException;
 import org.hbrs.se1.ws21.uebung3.persistence.PersistenceException;
@@ -12,7 +13,7 @@ import org.hbrs.se1.ws21.uebung3.persistence.PersistenceStrategyStream;
 
 public class Container {
 
-    private LinkedList<Member> list;
+    public LinkedList<Member> list;
     /**
      * Privates Klassenattribut,
      * wird beim erstmaligen Gebrauch der Klasse erzeugt
@@ -82,14 +83,11 @@ public class Container {
             return "Erfolgreich gelöscht: Der Member mit der ID " +id +" wurde entfernt.";
         }
     }
-    public void dump() {
-        Iterator<Member> listIterator = list.iterator();
-        Member tempMember;
-        while (listIterator.hasNext()) {
-            tempMember = listIterator.next();
-            System.out.println(tempMember.toString());
-        }
+
+    public LinkedList<Member> getCurrentList() {
+        return list;
     }
+
     public int size() {
         return list.size();
     }
@@ -108,7 +106,7 @@ public class Container {
      */
     public void load() throws PersistenceException {
         PersistenceStrategyStream stream2 = new PersistenceStrategyStream();
-        stream2.load();
+        list = (LinkedList<Member>) stream2.load();
     }
 
 
