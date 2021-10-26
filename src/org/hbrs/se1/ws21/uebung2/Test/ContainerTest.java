@@ -20,7 +20,7 @@ class ContainerTest {
 
     @BeforeEach
     void setUp() {
-        Container container = new Container();
+        Container container = Container.getInstance();
         Member m1 = new CreateMember(1);
         Member m2 = new CreateMember(2);
         Member m3 = new CreateMember(3);

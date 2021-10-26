@@ -4,6 +4,7 @@ import java.util.Iterator;
 
 import org.hbrs.se1.ws21.uebung2.Exception.ContainerException;
 import org.hbrs.se1.ws21.uebung3.persistence.PersistenceException;
+import org.hbrs.se1.ws21.uebung3.persistence.PersistenceStrategyStream;
 
 //Herr Alda ich muss sagen, dass ich die Letzte Aufagbenstellung bezüglich der Datenstruktur ANFORDERUNG
 // erst am Ende nach der Bearbeitung des eigentlichen Programms gelesen habe, demnach finden sie unter dem neuen
@@ -12,12 +13,32 @@ import org.hbrs.se1.ws21.uebung3.persistence.PersistenceException;
 public class Container {
 
     private LinkedList<Member> list;
-
     /**
-     * Konstruktor für das Container Objekt
+     * Privates Klassenattribut,
+     * wird beim erstmaligen Gebrauch der Klasse erzeugt
      */
-    public Container() {
+    private static Container container;
+
+    /** Konstruktor ist privat, darf nicht von außen instanziiert werden. */
+    private Container() {
         list = new LinkedList<>();
+    }
+
+    //LazyCreation
+    //Von Lazy Creation spricht man, wenn das einzige Objekt der Klasse erst erzeugt wird, wenn es benötigt wird.
+    //Ziel ist, dass der Speicherbedarf und die Rechenzeit für die Instanziierung des Objektes nur dann aufgewendet werden, wenn das Objekt wirklich benötigt wird.
+    //Hierzu wird der Konstruktor ausschließlich beim ersten Aufruf der Funktion getInstance() aufgerufen.
+
+    //Design Pattern: Singleton
+    /**
+     * Statische Methode "getInstance()" liefert die einzige Instanz der Klasse zurück.
+     * Ist synchronisiert und somit thread-sicher.
+     */
+    public synchronized static Container getInstance() {
+        if (container == null) {
+            container = new Container();
+        }
+        return container;
     }
 
     public void addMember(Member member) throws ContainerException {
@@ -74,18 +95,20 @@ public class Container {
     }
 
     /**
-     * speichert die Objekte member von container persistent auf einem Datenspeicher
+     * Ruft die Methode store über den stream auf
      * @throws PersistenceException
      */
     public void store() throws PersistenceException {
-
+        PersistenceStrategyStream stream1 = new PersistenceStrategyStream();
+        stream1.save(list);
     }
 
     /**
-     *
+     * Ruft die Methode load über den stream auf
      */
     public void load() throws PersistenceException {
-
+        PersistenceStrategyStream stream2 = new PersistenceStrategyStream();
+        stream2.load();
     }
 
 

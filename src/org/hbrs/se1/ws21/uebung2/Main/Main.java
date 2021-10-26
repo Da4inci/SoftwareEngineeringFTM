@@ -16,7 +16,7 @@ public class Main {
         Member[] memberarray = {m1,m2,m3,m4};
 
         try {
-            Container c1 = new Container();
+            Container c1 = Container.getInstance();
             for (Member j : memberarray) {
                 c1.addMember(j);
                 System.out.println("Member " + j.getID() + " hinzugefügt");
