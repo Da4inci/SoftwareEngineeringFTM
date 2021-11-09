@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0055c86a-0674-4803-9cd4-7b5ea060f84d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung4/prototype/Eingabe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung4/prototype/CreateMembee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung4/prototype/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung4/prototype/Membee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung4/prototype/Eingabe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hbrs/se1/ws21/uebung4/prototype/Eingabe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +18,7 @@
       <list>
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -62,13 +66,26 @@
       <recent name="org.hbrs.se1.ws21.uebung1.Test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PersistenceStrategyStreamTest.save">
+  <component name="RunManager" selected="Application.Main (2)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws21.uebung3.persistence.Main" />
       <module name="codesSE2021" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.hbrs.se1.ws21.uebung3.persistence.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hbrs.se1.ws21.uebung4.prototype.Main" />
+      <module name="codesSE2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hbrs.se1.ws21.uebung4.prototype.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,6 +139,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (2)" />
         <item itemvalue="JUnit.PersistenceStrategyStreamTest.save" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="JUnit.PersistenceStrategyStreamTest" />
@@ -157,7 +175,7 @@
       <workItem from="1635334489987" duration="2321000" />
       <workItem from="1635872374343" duration="7000" />
       <workItem from="1635933398199" duration="757000" />
-      <workItem from="1636454095398" duration="1456000" />
+      <workItem from="1636454095398" duration="3409000" />
     </task>
     <task id="LOCAL-00001" summary="Uebung1 Vollständig">
       <created>1634571680207</created>
@@ -250,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636456548795</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="SE1 Uebung4 start">
+      <created>1636457412294</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1636457412295</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +288,8 @@
     <MESSAGE value="SE1 Uebung2 vollstämdig bearbeitet" />
     <MESSAGE value="SE1 Uebung3 ...bearbeiten..." />
     <MESSAGE value="SE1 Uebung3 DesignPattern(Singleton) + Stream fertig" />
-    <option name="LAST_COMMIT_MESSAGE" value="SE1 Uebung3 DesignPattern(Singleton) + Stream fertig" />
+    <MESSAGE value="SE1 Uebung4 start" />
+    <option name="LAST_COMMIT_MESSAGE" value="SE1 Uebung4 start" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
