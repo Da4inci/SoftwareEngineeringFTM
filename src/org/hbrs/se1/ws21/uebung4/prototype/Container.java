@@ -1,10 +1,7 @@
 package org.hbrs.se1.ws21.uebung4.prototype;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /*
@@ -32,9 +29,10 @@ public class Container {
 	// Diese Variante sei thread-safe, so hat Hr. P. es gehört... --> ToDo
 	// Nachteil: ggf. hoher Speicherbedarf, da Singleton zu Programmstart schon erzeugt
 	private static Container instance = new Container();
-	
-	// URL der Datei, in der die Objekte gespeichert werden 
-	final static String LOCATION = "allemployees1.ser";
+
+	// URL of file, in which the objects are stored
+	final static String LOCATION = "/Users/finnthemachine/Desktop/membs3.txt";
+
 
 	/**
 	 * Liefert ein Singleton zurück.
@@ -85,23 +83,75 @@ public class Container {
 
 			// 	Falls 'help' eingegeben wurde, werden alle Befehle ausgedruckt
 			if ( strings[0].equals("help") ) {
-				System.out.println("Folgende Befehle stehen zur Verfuegung: help, dump....");
+				System.out.println("Folgende Befehle stehen zur Verfuegung: \n" +
+						" enter(to create a new worker) \n" +
+						" store(save all member objects persistence in your data) \n" +
+						" load(load all members from your data) \n" +
+						" dump(show all saved members) \n" +
+						" exit(leave this shitty programm) \n" +
+						" help(show this again)\n");
 			}
 			// Auswahl der bisher implementierten Befehle:
 			if ( strings[0].equals("dump") ) {
+				System.out.println("| ID | Vorname | Nachname | Abteilung | Rolle | Expertise |");
 				startAusgabe();
 			}
 			// Auswahl der bisher implementierten Befehle:
 			if ( strings[0].equals("enter") ) {
-				// Daten einlesen ...
-				// this.addEmployee( new Employee( data ) ) um das Objekt in die Liste einzufügen.
-			}
-								
+				Scanner s = new Scanner(System.in);
+
+				System.out.print("ID? ");
+				int id = s.nextInt();
+				//e.setPid(id);
+
+				System.out.print("Vorname? ");
+				String vn = s.nextLine();
+				//e.setVorname(vn);
+				s.nextLine();
+
+				System.out.print("Nachname? ");
+				String nn = s.nextLine();
+				//e.setName(nn);
+
+				System.out.print("Rolle? ");
+				String rolle = s.nextLine();
+				//e.setRolle(rolle);
+
+				System.out.print("Abteilung? ");
+				String abteilung = s.nextLine();
+				//e.setAbteilung(abteilung);
+
+				System.out.print("Beginner, Experte, Top-Performer? ");
+				Integer wertexpo = s.nextInt();
+				//e.setExpertisewert(wertexpo);
+				s.nextLine();
+
+				System.out.print("Expertisen Bereich? ");
+				String expertise = s.nextLine();
+				//e.setExpertise(expertise);
+
+				Employee e = new Employee(id,vn,nn, rolle, abteilung,expertise,wertexpo);
+				addEmployee(e);
+				System.out.println("Neuer Member wurde erstellt");
+		}
+
 			if (  strings[0].equals("store")  ) {
-				Employee employee = new Employee();
-				employee.setPid(2);
-				this.addEmployee( employee );
 				this.store();
+			}
+			if (  strings[0].equals("load")  ) {
+				if (strings[1].equals("merge")) {
+					//this.load("merge");
+				} else {
+					//this.load("force");
+				}
+			}
+
+
+			if (strings[0].equals("exit")) {
+				scanner.close();
+			}
+
+			if (strings[0].equals("search")) {
 			}
 
 
@@ -141,7 +191,7 @@ public class Container {
 		try {
 			fos = new FileOutputStream( Container.LOCATION );
 			oos = new ObjectOutputStream(fos);
-			
+
 			oos.writeObject( this.liste );
 			System.out.println( this.size() + " Employee wurden erfolgreich gespeichert!");
 		}
@@ -167,10 +217,23 @@ public class Container {
 		  
 		  // Auslesen der Liste
 		  Object obj = ois.readObject();
-		  if (obj instanceof List<?>) {
-			  this.liste = (List) obj;
-		  }
-		  System.out.println("Es wurden " + this.size() + " Mitarbeiter erfolgreich reingeladen!");
+		  if (mergeload.equals("merge")) {
+				if (obj instanceof List<?>) {
+					List objectlist = (List) obj;
+					Iterator<Employee> iterator = objectlist.iterator();
+					while (iterator.hasNext()) {
+						liste.add(iterator.next());
+					}
+					System.out.println("Es wurden " + objectlist.size() + " Mitarbeiter erfolgreich reingeladen!\n" +
+							"Insgesamt befinden sich jetzt " + this.size() + " Mitarbeiter in der Liste!");
+				}
+
+			} else {
+				if (obj instanceof List<?>) {
+					this.liste = (List) obj;
+				}
+				System.out.println("Es wurden " + this.size() + " Mitarbeiter erfolgreich reingeladen!");
+			}
 		}
 		catch (IOException e) {
 			System.out.println("LOG (für Admin): Datei konnte nicht gefunden werden!");
@@ -179,8 +242,8 @@ public class Container {
 			System.out.println("LOG (für Admin): Liste konnte nicht extrahiert werden (ClassNotFound)!");
 		}
 		finally {
-		  if (ois != null) try { ois.close(); } catch (IOException e) {}
-		  if (fis != null) try { fis.close(); } catch (IOException e) {}
+			if (ois != null) try { ois.close(); } catch (IOException e) {}
+			if (fis != null) try { fis.close(); } catch (IOException e) {}
 		}
 	}
 
