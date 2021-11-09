@@ -2,6 +2,9 @@ package org.hbrs.se1.ws21.uebung3.persistence;
 
 import java.util.List;
 
+/*
+@author fwessl2s
+ */
 public class PersistenceStrategyMongoDB<Member> implements PersistenceStrategy<Member> {
 
     @Override

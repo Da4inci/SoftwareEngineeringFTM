@@ -4,6 +4,9 @@ import java.io.*;
 
 import java.util.List;
 
+/*
+@author fwessl2s
+ */
 import static org.hbrs.se1.ws21.uebung3.persistence.PersistenceException.ExceptionType.ImplementationNotAvailable;
 
 public class PersistenceStrategyStream<Member> implements PersistenceStrategy<Member> {

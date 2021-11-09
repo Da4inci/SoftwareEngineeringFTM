@@ -11,14 +11,29 @@ import org.hbrs.se1.ws21.uebung3.persistence.PersistenceStrategyStream;
 // erst am Ende nach der Bearbeitung des eigentlichen Programms gelesen habe, demnach finden sie unter dem neuen
 // (jetzigen) Programm die eigentlichen Methoden(kommentiert) ...schade, aber dennoch war das eine gute Übung :)
 
+
 public class Container {
 
     public LinkedList<Member> list;
     /**
      * Privates Klassenattribut,
      * wird beim erstmaligen Gebrauch der Klasse erzeugt
+     * Direkte Instanzieerung beim Laden der Klasse -> Hoher Speicherbedarf
+     * private final static Container container = new Container();
      */
     private static Container container;
+
+    /*
+    private final static Object lock = new Object();
+    public static Container getINstance() {
+        synchronized (lock) {
+            if (instance == null) {
+                return instance;
+            }
+        }
+        return instance;
+        }
+     */
 
     /** Konstruktor ist privat, darf nicht von außen instanziiert werden. */
     private Container() {
@@ -33,7 +48,8 @@ public class Container {
     //Design Pattern: Singleton
     /**
      * Statische Methode "getInstance()" liefert die einzige Instanz der Klasse zurück.
-     * Ist synchronisiert und somit thread-sicher.
+     * synchronisiert und somit thread-sicher. Thread = Teilprozess
+     *
      */
     public synchronized static Container getInstance() {
         if (container == null) {

@@ -5,6 +5,9 @@ import org.hbrs.se1.ws21.uebung2.Member;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/*
+@author fwessl2s
+ */
 public class MemberView {
 
     public static void dump(LinkedList<Member> list) {

@@ -4,6 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
+/*
+@author fwessl2s
+ */
 /**
  * Interface for defining basic methods for a persistence mechanism
  * Each concrete algorithm (i.e. strategy) must implement this method

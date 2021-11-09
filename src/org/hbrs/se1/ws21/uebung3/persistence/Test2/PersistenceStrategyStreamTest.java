@@ -13,7 +13,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/*
+@author fwessl2s
+ */
 class PersistenceStrategyStreamTest {
 
     //Was ist denn das für ein komischer Test, anscheinend ist der leere Container bereits voll beim erstellen ...aaaahhhaaa ....
@@ -41,6 +43,18 @@ class PersistenceStrategyStreamTest {
      */
     @Test
     void save() {
+        assertNotNull(this.container);
+
+        final PersistenceException loadException = assertThrows(PersistenceException.class, this.container::load);
+        //ist das selbe wie die unteren drei Zeilen
+        assertThrows(PersistenceException.class, ()-> {
+            this.container.load();
+        });
+
+        assertDoesNotThrow(() -> this.container.store());
+
+        assertEquals(PersistenceException.ExceptionType.NoStrategyIsSet, loadException.getExceptionTypeType());
+
         try {
             container.store();
         } catch (PersistenceException e) {

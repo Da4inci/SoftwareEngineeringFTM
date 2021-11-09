@@ -1,5 +1,8 @@
 package org.hbrs.se1.ws21.uebung3.persistence;
 
+/*
+@author fwessl2s
+ */
 public class PersistenceException extends Exception {
 
     private ExceptionType exceptionType;

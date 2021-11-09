@@ -8,7 +8,9 @@ import org.hbrs.se1.ws21.uebung2.MemberFactory;
 import java.io.IOException;
 import java.util.List;
 
-
+/*
+@author fwessl2s
+ */
 public class Main {
     public static void main(String[] args) {
 

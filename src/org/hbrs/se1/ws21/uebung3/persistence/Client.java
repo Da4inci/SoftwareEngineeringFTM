@@ -4,7 +4,9 @@ import org.hbrs.se1.ws21.uebung2.Container;
 import org.hbrs.se1.ws21.uebung2.Exception.ContainerException;
 import org.hbrs.se1.ws21.uebung2.Member;
 import org.hbrs.se1.ws21.uebung2.MemberFactory;
-
+/*
+@author fwessl2s
+ */
 public class Client {
 
     public static void SilverMen() {
